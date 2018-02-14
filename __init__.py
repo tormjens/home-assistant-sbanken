@@ -14,14 +14,13 @@ import voluptuous as vol
 
 from random import randrange
 
-from requests_oauthlib import OAuth2Session
-from oauthlib.oauth2 import BackendApplicationClient
-
 import homeassistant.helpers.config_validation as cv
 from homeassistant.helpers.entity import Entity
 from homeassistant.helpers.event import track_time_interval
 from homeassistant.components.sensor import PLATFORM_SCHEMA
 from homeassistant.const import (CONF_SCAN_INTERVAL)
+
+REQUIREMENTS = ['oauthlib==2.0.6', 'requests-oauthlib==0.8.0']
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -39,6 +38,7 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
 
 def setup_platform(hass, config, add_devices, discovery_info=None):
     """Setup the sensor platform."""
+
     _LOGGER.debug("Setting up Sbanken Sensor Platform.")
 
     api = SbankenApi(config.get(CONF_CUSTOMER_ID), config.get(CONF_CLIENT_ID), config.get(CONF_SECRET))
@@ -104,12 +104,17 @@ class SbankenApi(object):
 
     def __init__(self, customer_id, client_id, secret):
         """Initialize the data object."""
+        
         self.customer_id = customer_id
         self.client_id = client_id
         self.secret = secret
         self.session = self.create_session()
     
     def create_session(self):
+
+        from requests_oauthlib import OAuth2Session
+        from oauthlib.oauth2 import BackendApplicationClient
+        
         oauth2_client = BackendApplicationClient(client_id=self.client_id)
         session = OAuth2Session(client=oauth2_client)
         session.fetch_token(

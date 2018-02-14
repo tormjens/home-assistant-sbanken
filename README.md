@@ -5,6 +5,7 @@ This sensor platform uses the open API of the norwegian bank Sbanken.
 Every account the customer has in the bank is created as sensor, and updated every 30 minutes.
 
 ## Installation
+
 Clone this repository to the `custom_components` directory in your Home Assistant config directory.
 
 `git clone git@github.com:tormjens/home-assistant-sbanken.git sbanken`
