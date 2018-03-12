@@ -26,6 +26,13 @@ _LOGGER = logging.getLogger(__name__)
 
 SCAN_INTERVAL = datetime.timedelta(minutes=30)
 
+ATTR_AVAILABLE = 'available'
+ATTR_BALANCE = 'balance'
+ATTR_ACCOUNT_NUMBER = 'account_number'
+ATTR_NAME = 'name'
+ATTR_ACCOUNT_TYPE = 'account_type'
+ATTR_ACCOUNT_LIMIT = 'credit_limit'
+
 CONF_CUSTOMER_ID = 'customer_id'
 CONF_CLIENT_ID = 'client_id'
 CONF_SECRET = 'secret'
@@ -88,6 +95,19 @@ class SbankenSensor(Entity):
     def icon(self):
         """Icon to use in the frontend, if any."""
         return 'mdi:cash'
+
+    @property
+    def device_state_attributes(self):
+        """Return the state attributes."""
+        return {
+            ATTR_AVAILABLE: self._account['available'], 
+            ATTR_BALANCE: self._account['balance'], 
+            ATTR_ACCOUNT_NUMBER: self._account['accountNumber'], 
+            ATTR_NAME: self._account['name'], 
+            ATTR_ACCOUNT_TYPE: self._account['accountType'], 
+            ATTR_ACCOUNT_LIMIT: self._account['creditLimit']
+            }
+
 
     def update(self):
         """Fetch new state data for the sensor.
