@@ -10,7 +10,6 @@ To get started download
 ```
 /custom_components/sbanken/__init__.py
 /custom_components/sbanken/sensor.py
-
 ```
 into
 ```
