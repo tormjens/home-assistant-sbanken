@@ -16,7 +16,7 @@ from random import randrange
 import homeassistant.helpers.config_validation as cv
 from homeassistant.helpers.entity import Entity
 from homeassistant.helpers.event import track_time_interval
-from homeassistant.components.sensor import (PLATFORM_SCHEMA, DOMAIN)
+from homeassistant.components.sensor import PLATFORM_SCHEMA
 from homeassistant.const import (CONF_SCAN_INTERVAL)
 
 
@@ -24,6 +24,8 @@ REQUIREMENTS = ['oauthlib==3.0.2', 'requests-oauthlib==1.2.0']
 
 
 _LOGGER = logging.getLogger(__name__)
+
+DOMAIN = 'sbanken'
 
 SCAN_INTERVAL = datetime.timedelta(minutes=20)
 
@@ -53,9 +55,9 @@ CONF_CLIENT_ID = 'client_id'
 CONF_SECRET = 'secret'
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
-    vol.Optional(CONF_CUSTOMER_ID): cv.string,
-    vol.Optional(CONF_CLIENT_ID): cv.string,
-    vol.Optional(CONF_SECRET): cv.string,
+    vol.Required(CONF_CUSTOMER_ID): cv.string,
+    vol.Required(CONF_CLIENT_ID): cv.string,
+    vol.Required(CONF_SECRET): cv.string,
     vol.Optional(CONF_SCAN_INTERVAL, default=SCAN_INTERVAL): cv.time_period,
 })
 
