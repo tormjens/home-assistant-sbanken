@@ -2,7 +2,7 @@
 
 This sensor platform uses the open API of the norwegian bank Sbanken. 
 
-Every account the customer has in the bank is created as sensor, and updated every 30 minutes.
+Every account the customer has in the bank is created as sensor, and updated every 20 minutes.
 
 ## Installation
 
