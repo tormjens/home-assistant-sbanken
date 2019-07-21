@@ -6,9 +6,16 @@ Every account the customer has in the bank is created as sensor, and updated eve
 
 ## Installation
 
-Clone this repository to the `custom_components/sensor/` directory in your Home Assistant config directory.
+To get started download
+```
+/custom_components/sbanken/__init__.py
+/custom_components/sbanken/sensor.py
 
-`git clone git@github.com:tormjens/home-assistant-sbanken.git sbanken`
+```
+into
+```
+<config directory>/custom_components/sbanken/
+```
 
 Restart your Home Assistant instance to load the component.
 
