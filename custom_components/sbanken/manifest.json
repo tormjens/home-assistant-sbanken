@@ -1,0 +1,8 @@
+{
+    "domain": "sbanken",
+    "name": "Sbanken",
+    "documentation": "https://github.com/toringer/home-assistant-sbanken",
+    "requirements": [],
+    "dependencies": [],
+    "codeowners": ["@toringer"]
+}
