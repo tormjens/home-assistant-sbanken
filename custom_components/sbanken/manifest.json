@@ -1,7 +1,7 @@
 {
     "domain": "sbanken",
     "name": "Sbanken",
-    "version": "1.1",
+    "version": "1.1.0",
     "documentation": "https://github.com/toringer/home-assistant-sbanken",
     "requirements": [],
     "dependencies": [],
