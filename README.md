@@ -1,3 +1,7 @@
+# This  repository was archived 2021-06-20
+Please see https://github.com/sepodele/home-assistant-sbanken
+
+
 # Sbanken Sensor Platform for Home Assistant
 
 This sensor platform uses the open API of the norwegian bank Sbanken. 
