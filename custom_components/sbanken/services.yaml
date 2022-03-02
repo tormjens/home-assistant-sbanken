@@ -1,0 +1,34 @@
+transfer:
+  name: "Transfer"
+  description: "Transfer between accounts."
+  fields:
+    from_account_entity:
+      name: From account
+      example: 123456
+      required: true
+      selector:
+        entity:
+          integration: sbanken
+    to_account_entity:
+      name: "To account"
+      example: ""
+      required: true
+      selector:
+        entity:
+          integration: sbanken
+    amount:
+      name: "Amount"
+      example: ""
+      required: true
+      selector:
+        number:
+          min: 1
+          max: 100000000000000000
+          unit_of_measurement: kr
+          mode: box
+    message:
+      name: Message
+      example: ""
+      required: true
+      selector:
+        text:
