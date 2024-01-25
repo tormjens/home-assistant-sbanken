@@ -1,5 +1,7 @@
 # Sbanken Sensor Platform for Home Assistant
 
+# Discontinued due to Sbanken closing their API after merging with DNB.
+
 This sensor platform uses the open API of the norwegian bank Sbanken. 
 
 Every account the customer has in the bank is created as sensor, and updated every 30 minutes.
